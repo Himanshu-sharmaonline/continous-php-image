@@ -1,0 +1,14 @@
+name: Docker Image CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout codebase
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . -t himanshu/php_image
